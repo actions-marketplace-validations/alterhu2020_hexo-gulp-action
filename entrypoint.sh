@@ -22,7 +22,10 @@ if [ "$INPUT_COMMIT_MSG" = "none" ]
 then
     hexo clean
     hexo generate
-    gulp
+    if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
+    then
+      gulp
+    fi
     hexo deploy
 elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
 then
@@ -30,13 +33,19 @@ then
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo clean
     hexo generate
-    gulp
+    if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
+    then
+      gulp
+    fi
     hexo deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo clean
     hexo generate
-    gulp
+    if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
+    then
+      gulp
+    fi
     hexo deploy -m "$INPUT_COMMIT_MSG"
 fi
 

@@ -14,6 +14,10 @@ inputs:
     description: 'The deploy key for Github Pages repo'
     required: true
     default: ''
+  gulp:
+    description: 'Run gulp command or not. true or false'
+    required: false
+    default: 'false'
   commit_msg:
     description: 'Git commit messages to your GitHub Pages repository.'
     required: false
@@ -30,5 +34,5 @@ runs:
     - ${{ inputs.deploy_key }}
     - ${{ inputs.commit_msg }}
 branding:
-  icon: 'package'  
+  icon: 'package'
   color: 'blue'
