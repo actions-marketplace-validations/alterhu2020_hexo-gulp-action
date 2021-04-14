@@ -1,6 +1,6 @@
 FROM node:12-buster-slim
 
-LABEL version="1.0.0"
+LABEL version="1.0.6"
 LABEL repository="https://github.com/alterhu2020/hexo-gulp-action"
 LABEL homepage="https://seniortesting.club"
 LABEL maintainer="alterhu2020 <alterhu2020@gmail.com>"
